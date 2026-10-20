@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Vérifier que manifest.json correspond au tag
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          VER=$(python3 -c "import json;print(json.load(open('custom_components/nrjmobile/manifest.json'))['version'])")
+          echo "tag=$TAG  manifest=$VER"
+          if [ "$TAG" != "$VER" ]; then
+            echo "::error::Le tag v$TAG ne correspond pas à manifest.json ($VER). Bump d'abord la version dans manifest.json."
+            exit 1
+          fi
+
+      - name: Créer la Release GitHub
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "${GITHUB_REF_NAME}" --title "${GITHUB_REF_NAME}" --generate-notes
