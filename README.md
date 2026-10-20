@@ -101,32 +101,3 @@ automation:
 ```
 
 > Remplace `06XXXXXXXX` par ton numéro (visible dans l'entity‑id généré).
-
----
-
-## 🛠️ Notes techniques
-
-- Auth OIDC **PKCE** directe (Keycloak `oauth2.nrjmobile.fr`, realm `nrj`, client `wsc-frontend`) ; token ~5 min → ré‑authentification à chaque cycle.
-- Appels espacés de 350 ms (anti‑403 WAF).
-- `custom_components/nrjmobile/api.py` est autonome : `python3 api.py` lance un self‑check hors‑ligne.
-- Icônes de marque locales servies via la [Brands Proxy API](https://contributors.home-assistant.io/blog/2026/02/24/brands-proxy-api/) (HA 2026.3+).
-
----
-
-## 🏪 Publier dans le store HACS par défaut (optionnel)
-
-Pour que l'intégration apparaisse **sans ajout de dépôt personnalisé**, il faut la soumettre à [`hacs/default`](https://github.com/hacs/default). Prérequis (déjà remplis ici ✅) :
-
-- ✅ `hacs.json` à la racine
-- ✅ `custom_components/<domain>/manifest.json` avec `version`, `documentation`, `issue_tracker`, `codeowners`
-- ✅ Description du dépôt et **topics** GitHub renseignés
-- ✅ Au moins une **release** publiée (versionnée)
-- La validation HACS (GitHub Action [`hacs/action`](https://github.com/hacs/action)) et [`hassfest`](https://developers.home-assistant.io/blog/2020/04/16/hassfest/) doivent passer en CI
-
-Ensuite : fork de `hacs/default`, ajouter la ligne `Louis73cr/NRJ-Mobile-HACS-integration` dans le fichier `integration`, et ouvrir une PR. L'inclusion est manuelle et revue par l'équipe HACS.
-
----
-
-## 📄 Licence
-
-Usage personnel / interopérabilité avec son propre compte NRJ Mobile.
