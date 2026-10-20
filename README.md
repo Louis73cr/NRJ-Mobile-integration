@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="https://github.com/hacs/integration"><img src="https://img.shields.io/badge/HACS-Custom-41BDF5.svg?style=for-the-badge" alt="HACS Custom"></a>
-  <img src="https://img.shields.io/github/v/release/Louis73cr/NRJ-Mobile-HACS-integration?style=for-the-badge" alt="Release">
+  <img src="https://img.shields.io/github/v/release/Louis73cr/NRJ-Mobile-integration?style=for-the-badge" alt="Release">
   <img src="https://img.shields.io/badge/Home%20Assistant-2024.1%2B-049CDB?style=for-the-badge&logo=home-assistant&logoColor=white" alt="HA">
 </p>
 
@@ -40,10 +40,10 @@ L'attribut du capteur *Data utilisée* contient le forfait, le contrat, le prix 
 
 ### Via HACS (recommandé)
 
-[![Ouvrir dans HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Louis73cr&repository=NRJ-Mobile-HACS-integration&category=integration)
+[![Ouvrir dans HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Louis73cr&repository=NRJ-Mobile-integration&category=integration)
 
 1. Clique le bouton ci‑dessus **ou** : HACS → menu ⋮ (haut‑droite) → **Dépôts personnalisés**
-2. URL : `https://github.com/Louis73cr/NRJ-Mobile-HACS-integration` — catégorie : **Integration**
+2. URL : `https://github.com/Louis73cr/NRJ-Mobile-integration` — catégorie : **Integration**
 3. Ouvre **NRJ Mobile** dans la liste → **Télécharger**
 4. **Redémarre** Home Assistant
 
