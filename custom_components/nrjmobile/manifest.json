@@ -1,7 +1,6 @@
 {
   "domain": "nrjmobile",
   "name": "NRJ Mobile",
-  "categories": ["computers_network.monitoring"],
   "codeowners": ["@Louis73cr"],
   "config_flow": true,
   "documentation": "https://github.com/Louis73cr/NRJ-Mobile-HACS-integration",
