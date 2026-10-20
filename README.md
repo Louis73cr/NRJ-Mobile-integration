@@ -12,6 +12,7 @@
 <p align="center">
   <a href="https://github.com/hacs/integration"><img src="https://img.shields.io/badge/HACS-Custom-41BDF5.svg?style=for-the-badge" alt="HACS Custom"></a>
   <img src="https://img.shields.io/github/v/release/Louis73cr/NRJ-Mobile-integration?style=for-the-badge" alt="Release">
+  <img src="https://img.shields.io/github/downloads/Louis73cr/NRJ-Mobile-integration/total?style=for-the-badge&label=installs&color=success" alt="Installs">
   <img src="https://img.shields.io/badge/Home%20Assistant-2024.1%2B-049CDB?style=for-the-badge&logo=home-assistant&logoColor=white" alt="HA">
 </p>
 
@@ -100,3 +101,22 @@ automation:
 ```
 
 > Remplace `06XXXXXXXX` par ton numéro (visible dans l'entity‑id généré).
+
+---
+
+## 📊 Adoption
+
+**Nombre d'installations** — deux sources :
+
+- 🔢 Badge **installs** (en haut) : téléchargements cumulés de l'asset `.zip` comptés par GitHub (installations + mises à jour).
+- 📈 **HA Analytics** (installs actifs réels) : [analytics.home-assistant.io/custom_integrations](https://analytics.home-assistant.io/custom_integrations/) → cherche le domaine `nrjmobile`. Agrégé depuis les instances ayant activé les statistiques, mis à jour chaque semaine (apparaît dès qu'il y a assez d'installs).
+
+### Intérêt dans le temps (⭐ GitHub)
+
+<p align="center">
+  <a href="https://star-history.com/#Louis73cr/NRJ-Mobile-integration&Date">
+    <img src="https://api.star-history.com/svg?repos=Louis73cr/NRJ-Mobile-integration&type=Date" width="600" alt="Star History Chart">
+  </a>
+</p>
+
+> GitHub ne fournit pas de graphique « installs dans le temps » : le graphe ci-dessus suit les ⭐ (indicateur d'intérêt). Les vrais chiffres d'installation sont le badge et HA Analytics ci-dessus.

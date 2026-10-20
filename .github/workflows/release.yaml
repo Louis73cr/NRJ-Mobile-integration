@@ -24,7 +24,15 @@ jobs:
             exit 1
           fi
 
-      - name: Créer la Release GitHub
+      - name: Construire l'asset nrjmobile.zip
+        # zip_release : le zip contient les fichiers de l'intégration à sa racine
+        # (manifest.json, *.py, translations/, brand/), extraits dans
+        # custom_components/nrjmobile/. GitHub compte les téléchargements de cet asset.
+        run: |
+          cd custom_components/nrjmobile
+          zip -r "$GITHUB_WORKSPACE/nrjmobile.zip" . -x '*.pyc' -x '*__pycache__*'
+
+      - name: Créer la Release GitHub (+ asset)
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "${GITHUB_REF_NAME}" --title "${GITHUB_REF_NAME}" --generate-notes
+        run: gh release create "${GITHUB_REF_NAME}" --title "${GITHUB_REF_NAME}" --generate-notes nrjmobile.zip
