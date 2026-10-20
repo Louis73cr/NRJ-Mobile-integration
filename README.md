@@ -5,7 +5,7 @@
 <h1 align="center">NRJ Mobile — intégration Home Assistant</h1>
 
 <p align="center">
-  Suivi de consommation et <b>rétablissement du débit data</b> (seuil 500 Go) pour
+  Suivi de consommation et <b>rétablissement du débit data</b> pour
   l'espace client <a href="https://espace-client.nrjmobile.fr">NRJ Mobile</a>.<br>
   100 % Python, <b>sans MQTT ni broker</b>.
 </p>
