@@ -1,0 +1,35 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "NRJ Mobile",
+        "description": "Your NRJ Mobile customer area credentials.",
+        "data": {
+          "username": "Username",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid username or password.",
+      "cannot_connect": "Cannot connect to NRJ Mobile."
+    },
+    "abort": {
+      "already_configured": "This account is already configured."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "data_used": { "name": "Data used" },
+      "data_limit": { "name": "Data cap" },
+      "data_remaining": { "name": "Data remaining" },
+      "out_of_plan_euro": { "name": "Out-of-plan charges" }
+    },
+    "binary_sensor": {
+      "threshold_reached": { "name": "Data cap reached" }
+    },
+    "button": {
+      "reset_debit": { "name": "Restore web speed" }
+    }
+  }
+}

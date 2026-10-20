@@ -1,0 +1,35 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "NRJ Mobile",
+        "description": "Identifiants de votre espace client NRJ Mobile.",
+        "data": {
+          "username": "Identifiant",
+          "password": "Mot de passe"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Identifiant ou mot de passe invalide.",
+      "cannot_connect": "Connexion à NRJ Mobile impossible."
+    },
+    "abort": {
+      "already_configured": "Ce compte est déjà configuré."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "data_used": { "name": "Data utilisée" },
+      "data_limit": { "name": "Plafond data" },
+      "data_remaining": { "name": "Data restante" },
+      "out_of_plan_euro": { "name": "Hors-forfait" }
+    },
+    "binary_sensor": {
+      "threshold_reached": { "name": "Seuil data atteint" }
+    },
+    "button": {
+      "reset_debit": { "name": "Rétablir le débit web" }
+    }
+  }
+}

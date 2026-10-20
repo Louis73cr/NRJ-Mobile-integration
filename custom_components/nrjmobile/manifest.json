@@ -1,0 +1,12 @@
+{
+  "domain": "nrjmobile",
+  "name": "NRJ Mobile",
+  "codeowners": ["@Louis73cr"],
+  "config_flow": true,
+  "documentation": "https://github.com/Louis73cr/NRJ-Mobile-HACS-integration",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/Louis73cr/NRJ-Mobile-HACS-integration/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}
