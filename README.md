@@ -68,6 +68,8 @@ L'intégration se connecte en OIDC/PKCE (Keycloak), récupère toutes tes lignes
 
 Le backend chiffre un « Frais de restauration » de 12 € **puis applique une remise équivalente → net 0 €**. Le bouton calcule le **coût net** (brut − remise) et **ne soumet la commande que si le net est 0 €**. Si un jour le net était > 0, le bouton échoue proprement **sans rien commander** : aucun prélèvement accidentel.
 
+> ℹ️ **Important** : le rétablissement fonctionne techniquement sur **tous les forfaits**, mais il n'est **gratuit que sur le forfait illimité de NRJ Mobile** (ex. *Série spéciale NRJ Mobile illimitée*), où la remise annule les 12 €. Sur les autres forfaits la remise ne s'applique pas : le coût net reste > 0 € et le bouton **refuse donc de commander** (comportement voulu). Pour rétablir malgré tout un forfait payant, il faut passer par l'espace client NRJ Mobile.
+
 ---
 
 ## 🤖 Automatisation — rétablir dès que bridé
