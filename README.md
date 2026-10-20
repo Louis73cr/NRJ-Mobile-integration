@@ -6,8 +6,7 @@
 
 <p align="center">
   Suivi de consommation et <b>rétablissement du débit data</b> pour
-  l'espace client <a href="https://espace-client.nrjmobile.fr">NRJ Mobile</a>.<br>
-  100 % Python, <b>sans MQTT ni broker</b>.
+  l'espace client <a href="https://espace-client.nrjmobile.fr">NRJ Mobile</a>.
 </p>
 
 <p align="center">
