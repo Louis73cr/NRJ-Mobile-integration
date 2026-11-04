@@ -6,6 +6,7 @@ from typing import Any
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
+from homeassistant.exceptions import ConfigEntryAuthFailed
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
@@ -41,11 +42,14 @@ class NrjCoordinator(DataUpdateCoordinator[dict[str, Any]]):
         try:
             await self.client.authenticate()
             user = await self.client.get_user_info()
-            cid = int((user or {}).get("data", {}).get("customerId"))
+            raw_cid = ((user or {}).get("data") or {}).get("customerId")
+            if raw_cid is None:
+                raise UpdateFailed("customerId absent de la réponse NRJ Mobile")
+            cid = int(raw_cid)
             self.customer_id = cid
             lines_res = await self.client.get_lines_info(cid)
         except NrjAuthError as err:
-            raise UpdateFailed(f"Auth NRJ Mobile: {err}") from err
+            raise ConfigEntryAuthFailed(f"Auth NRJ Mobile: {err}") from err
         except NrjApiError as err:
             raise UpdateFailed(str(err)) from err
 

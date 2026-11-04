@@ -8,6 +8,13 @@
           "username": "Identifiant",
           "password": "Mot de passe"
         }
+      },
+      "reauth_confirm": {
+        "title": "Réauthentification NRJ Mobile",
+        "description": "Le mot de passe de {username} n'est plus valide. Saisissez le nouveau.",
+        "data": {
+          "password": "Mot de passe"
+        }
       }
     },
     "error": {
@@ -15,21 +22,35 @@
       "cannot_connect": "Connexion à NRJ Mobile impossible."
     },
     "abort": {
-      "already_configured": "Ce compte est déjà configuré."
+      "already_configured": "Ce compte est déjà configuré.",
+      "reauth_successful": "Réauthentification réussie.",
+      "wrong_account": "Ce compte ne correspond pas à l'entrée configurée."
     }
   },
   "entity": {
     "sensor": {
-      "data_used": { "name": "Data utilisée" },
-      "data_limit": { "name": "Plafond data" },
-      "data_remaining": { "name": "Data restante" },
-      "out_of_plan_euro": { "name": "Hors-forfait" }
+      "data_used": {
+        "name": "Data utilisée"
+      },
+      "data_limit": {
+        "name": "Plafond data"
+      },
+      "data_remaining": {
+        "name": "Data restante"
+      },
+      "out_of_plan_euro": {
+        "name": "Hors-forfait"
+      }
     },
     "binary_sensor": {
-      "threshold_reached": { "name": "Seuil data atteint" }
+      "threshold_reached": {
+        "name": "Seuil data atteint"
+      }
     },
     "button": {
-      "reset_debit": { "name": "Rétablir le débit web" }
+      "reset_debit": {
+        "name": "Rétablir le débit web"
+      }
     }
   }
 }

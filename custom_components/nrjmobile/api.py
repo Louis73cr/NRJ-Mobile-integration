@@ -222,7 +222,9 @@ class NrjMobileClient:
             if (priced or {}).get("data", {}).get("quote"):
                 quote = priced["data"]["quote"]
         except NrjApiError:
-            pass
+            # Sans prix à jour, on ne commande jamais : seul le dry-run tolère l'échec.
+            if confirm:
+                raise
 
         cost = compute_effective_cost(quote)
         result = {
@@ -238,10 +240,10 @@ class NrjMobileClient:
         if has_pending:
             raise NrjApiError("Un FUP_RESET est déjà en cours (cooldown 10 min).")
         net = cost["net"]
-        if net is not None and net > 0 and not allow_paid:
+        if not allow_paid and (net is None or net > 0):
             raise NrjApiError(
                 f"Coût net {net} € (brut {cost['gross']} - remise {cost['discount']}). "
-                "Soumission bloquée (strict gratuit)."
+                "Soumission bloquée (strict gratuit, prix inconnu ou > 0)."
             )
         submit = await self._request("POST", "/quote/submitQuote", quote)
         result["submitted"] = (

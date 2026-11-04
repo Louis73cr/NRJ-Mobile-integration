@@ -8,6 +8,13 @@
           "username": "Username",
           "password": "Password"
         }
+      },
+      "reauth_confirm": {
+        "title": "Reauthenticate NRJ Mobile",
+        "description": "The password for {username} is no longer valid. Enter the new one.",
+        "data": {
+          "password": "Password"
+        }
       }
     },
     "error": {
@@ -15,21 +22,35 @@
       "cannot_connect": "Cannot connect to NRJ Mobile."
     },
     "abort": {
-      "already_configured": "This account is already configured."
+      "already_configured": "This account is already configured.",
+      "reauth_successful": "Reauthentication successful.",
+      "wrong_account": "This account does not match the configured entry."
     }
   },
   "entity": {
     "sensor": {
-      "data_used": { "name": "Data used" },
-      "data_limit": { "name": "Data cap" },
-      "data_remaining": { "name": "Data remaining" },
-      "out_of_plan_euro": { "name": "Out-of-plan charges" }
+      "data_used": {
+        "name": "Data used"
+      },
+      "data_limit": {
+        "name": "Data cap"
+      },
+      "data_remaining": {
+        "name": "Data remaining"
+      },
+      "out_of_plan_euro": {
+        "name": "Out-of-plan charges"
+      }
     },
     "binary_sensor": {
-      "threshold_reached": { "name": "Data cap reached" }
+      "threshold_reached": {
+        "name": "Data cap reached"
+      }
     },
     "button": {
-      "reset_debit": { "name": "Restore web speed" }
+      "reset_debit": {
+        "name": "Restore web speed"
+      }
     }
   }
 }
