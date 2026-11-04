@@ -120,3 +120,13 @@ automation:
 </p>
 
 > GitHub ne fournit pas de graphique « installs dans le temps » : le graphe ci-dessus suit les ⭐ (indicateur d'intérêt). Les vrais chiffres d'installation sont le badge et HA Analytics ci-dessus.
+
+---
+
+## 🤝 Contribuer
+
+Les contributions sont les bienvenues !
+
+- 🐛 **Bug ou problème** : ouvre une [issue](https://github.com/Louis73cr/NRJ-Mobile-integration/issues) avec ta version de Home Assistant et les logs (`custom_components.nrjmobile`).
+- 💡 **Idée de fonctionnalité** : ouvre une issue pour en discuter avant de coder.
+- 🔧 **Pull request** : forke le dépôt, crée une branche, puis ouvre une PR vers `main`. Je relis et valide chaque PR avant de l'intégrer.
