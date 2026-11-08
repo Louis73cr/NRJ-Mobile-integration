@@ -222,9 +222,9 @@ class NrjMobileClient:
             if (priced or {}).get("data", {}).get("quote"):
                 quote = priced["data"]["quote"]
         except NrjApiError:
-            # Sans prix à jour, on ne commande jamais : seul le dry-run tolère l'échec.
-            if confirm:
-                raise
+            # Best-effort (souvent 403) : le devis d'updateQuote porte déjà la remise.
+            # Le garde-fou net <= 0 ci-dessous bloque toute soumission si le prix est inconnu ou > 0.
+            pass
 
         cost = compute_effective_cost(quote)
         result = {
