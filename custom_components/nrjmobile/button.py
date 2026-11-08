@@ -8,6 +8,7 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
+from homeassistant.helpers.event import async_call_later
 
 from .api import NrjApiError
 from .const import DOMAIN
@@ -53,3 +54,9 @@ class NrjResetButton(NrjLineEntity, ButtonEntity):
             raise HomeAssistantError("Rétablissement non soumis (voir logs).")
         _LOGGER.info("Débit rétabli pour %s (net %s €)", self._msisdn, res.get("net"))
         await self.coordinator.async_request_refresh()
+        # La commande est traitée en asynchrone côté NRJ : le compteur ne retombe
+        # qu'après quelques minutes, on re-rafraîchit alors.
+        async def _refresh(_now) -> None:
+            await self.coordinator.async_request_refresh()
+
+        async_call_later(self.hass, 300, _refresh)
