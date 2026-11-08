@@ -196,6 +196,7 @@ class NrjMobileClient:
         confirm=False -> renvoie le devis sans soumettre.
         confirm=True  -> soumet UNIQUEMENT si net <= 0 (sauf allow_paid=True).
         """
+        await self.authenticate()  # token ~5 min : celui du dernier refresh est souvent expiré (401)
         ongoing = await self.get_ongoing_orders(customer_id, bid)
         has_pending = isinstance(ongoing, list) and any(
             o.get("bsnInterSpec", {}).get("shortCode") == "FUP_RESET"
